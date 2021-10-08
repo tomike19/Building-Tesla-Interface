@@ -1,17 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const Section = ({title,description,leftBtnText,rightBtnText,backgroundImg}) => {
+const Section = ({
+  title,
+  description,
+  leftBtnText,
+  rightBtnText,
+  backgroundImg,
+}) => {
   return (
-    <Wrap bgImage={backgroundImg }>
+    <Wrap bgImage={backgroundImg}>
       <ItemText>
-        <h1>{ title}</h1>
-        <p>{ description}</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </ItemText>
       <Buttons>
         <ButtonGroup>
-          <LeftButton>Custom Order</LeftButton>
-          <RightButton>Existing Inventory</RightButton>
+          <LeftButton>{leftBtnText}  </LeftButton>
+          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
         </ButtonGroup>
         <DownArrow src="/images/down-arrow.svg" />
       </Buttons>
@@ -32,8 +38,8 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: ${props => `url("/images/${props.bgImage}")`}
-`
+  background-image: ${(props) => `url("/images/${props.bgImage}")`};
+`;
 
 const ItemText = styled.div`
   padding-top: 15vh;
@@ -44,10 +50,10 @@ const ButtonGroup = styled.div`
   display: flex;
   margin-bottom: 30px;
 
-  @media(max-width:768px){
-flex-direction: column;
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
-`
+`;
 
 const LeftButton = styled.div`
   background-color: rgba(23, 26, 32, 0.8);
@@ -63,22 +69,19 @@ const LeftButton = styled.div`
   font-size: 12px;
   cursor: pointer;
   margin: 8px;
-`
+`;
 
-const RightButton = styled( LeftButton )`
-background-color: white;
-opacity:0.65;
-color:black;
-`
-
+const RightButton = styled(LeftButton)`
+  background-color: white;
+  opacity: 0.65;
+  color: black;
+`;
 
 const DownArrow = styled.img`
-margin-top:20px;
-height:40px;
-overflow-x: hidden;
-animation : animationDown infinite 1.5s;
-`
+  margin-top: 20px;
+  height: 40px;
+  overflow-x: hidden;
+  animation: animationDown infinite 1.5s;
+`;
 
-const Buttons = styled.div`
-
-`
+const Buttons = styled.div``;

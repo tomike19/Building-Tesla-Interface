@@ -35,11 +35,17 @@ const Home = () => {
           rightBtnText="Learn More"
         />
         <Section
-          title="Solarr for New Roof"
+          title="Solar for New Roof"
           description="Solar Roof Costs Less Than a New Roof"
           backgroundImg="solar-roof.jpg"
           leftBtnText="Order now"
           rightBtnText="Learn more"
+        />
+        <Section
+          title="Accessories"
+          description="Solar Roof Costs Less Than a New Roof"
+          backgroundImg="accessories.jpg"
+          leftBtnText="Shop now"
         />
       </Container>
     </div>
